@@ -1,4 +1,4 @@
-package com.example.administrator.demo;
+package com.example.administrator.demo.part;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -15,20 +15,20 @@ import com.example.administrator.pathanimator.PathAnimator;
  * @version 1.0
  * @date 2015/12/27 0027
  */
-public class PathView extends View {
+public class PathView2 extends View {
     PathAnimator mPathAnimator;
     int w,h;
     Path mPath;
     Paint mPaint = new Paint();
-    public PathView(Context context) {
+    public PathView2(Context context) {
         super(context);
     }
 
-    public PathView(Context context, AttributeSet attrs) {
+    public PathView2(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public PathView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public PathView2(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -44,25 +44,20 @@ public class PathView extends View {
         //画笔颜色
         mPaint.setStrokeWidth(20);
         mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setColor(Color.GREEN);
+        mPaint.setColor(Color.RED);
         mPaint.setAntiAlias(true);
         
         //要绘制的路径
         Path path = new Path();
-        path.addCircle(w/2,h/2,w/2-20, Path.Direction.CCW);
+        path.addCircle(w / 2, h / 2, w / 2 - 20, Path.Direction.CCW);
+        path.moveTo(w / 2 - 60, h / 2 - 60);
+        path.lineTo(w / 2 + 60, h / 2 + 60);
         
+        path.moveTo(w / 2 + 60, h / 2 - 60);
+        path.lineTo(w / 2 - 60, h / 2 + 60);
         //路径动画
         mPathAnimator = new PathAnimator(path);
-        mPathAnimator.setDuration(1000);//动画时间
-        mPathAnimator.startDelay(500);
-        mPathAnimator.addUpdateListener(new PathAnimator.PathAnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(float pathPrecent, Path path) {
-                mPath = path;//更新当前路径
-                invalidate();
-            }
-        });
-        mPathAnimator.start();
+        mPath = mPathAnimator.getSegment(0.2f,0.8f);
     }
     
     @Override

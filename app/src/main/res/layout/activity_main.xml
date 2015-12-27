@@ -1,12 +1,37 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:context="com.example.administrator.demo.MainActivity">
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.example.administrator.demo.MainActivity">
 
-    <com.example.administrator.demo.PathView
-        android:layout_centerInParent="true"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
-
+    <com.example.administrator.demo.path.PathView
+        android:layout_width="120dp"
+        android:layout_height="120dp"/>
+    <com.example.administrator.demo.part.PathView
+        android:layout_marginLeft="150dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"/>
+    <com.example.administrator.demo.path.PathView1
+        android:layout_marginTop="150dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"/>
+    <com.example.administrator.demo.part.PathView1
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="150dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"/>
+    <com.example.administrator.demo.path.PathView2
+        android:layout_marginTop="300dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"/>
+    <com.example.administrator.demo.part.PathView2
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="150dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"/>
+    <com.example.administrator.demo.along.PathView1
+        android:layout_marginTop="450dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"/>
 </RelativeLayout>
